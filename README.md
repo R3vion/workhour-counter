@@ -6,7 +6,8 @@ This application was built for professionals working on hourly-based projects wh
 
 Instead of receiving a number of hours and having to take it on trust, the client can receive a monthly statement containing individual work sessions, daily totals, hourly rates and calculated amounts. The records are digitally signed and can be independently checked using the application.
 
-![Workhour Counter](docs/screenshot.png)
+
+<p align="center"><img src="docs/screenshot.png" alt="Workhour Counter"></p>
 
 ## Privacy Comes First
 
@@ -33,14 +34,16 @@ Hourly billing should be based on recorded working time, not on numbers that app
 
 Workhour Counter creates a record throughout the project:
 
-- **For Contractors:** Working time is recorded automatically, without maintaining manual timesheets.
+- **For contractors:** Working time is recorded automatically, without maintaining manual timesheets.
 - **For clients:** Monthly statements provide a traceable breakdown of recorded working time and costs.
 - **For both sides:** Changes to existing records can be detected, and statements can be verified instead of relying only on the final amount.
 
 > **Know your working hours. Protect your time. Keep your work transparent.**
-This Software creates clear records of working hours. It can help prevent unpaid overtime and protect employees when managers do not understand how much work they do.
+This software creates clear records of working hours. It can help prevent unpaid overtime and protect employees when managers do not understand how much work they do.
 
 ## Project launch settings
+
+**First, download the latest released `.exe` file from the [Releases](https://github.com/R3vion/workhour-counter/releases) page.**
 
 During the first launch, the application asks for three settings:
 
@@ -68,8 +71,6 @@ Each folder maintains its own settings, worklogs and invoice history.
 
 ## How it works
 
-<text> </text>
-
 1. **Set up once.** Choose your currency, hourly rate and maximum inactive time.
 2. **Start working.** Press Start. The application records your sessions automatically.
 3. **Let it track.** Active and inactive time are handled automatically. No manual timesheets are needed.
@@ -82,7 +83,7 @@ Each folder maintains its own settings, worklogs and invoice history.
 
 Workhour Counter uses mouse movement to detect computer activity. It does not monitor keyboard input or record what appears on the screen.
 
-**A movement of at least 5 pixels counts only as activity.** This filters out tiny movements caused by optical mouse sensors.
+**Only a movement of at least 5 pixels counts as activity.** This filters out tiny movements caused by optical mouse sensors.
 
 The application displays two main time counters:
 
@@ -91,7 +92,7 @@ The application displays two main time counters:
 | Active time (Orange) | Confirmed time accumulated between detected mouse movements |
 | Inactive time (Blue) | Time elapsed since the last detected movement |
 
-Session ,daily and overall total time, together with their calculated wages, are also displayed.
+Session, daily and overall total time, together with their calculated wages, are also displayed.
 
 ### Automatic idle handling
 
@@ -156,7 +157,7 @@ Every CSV row is signed using HMAC-SHA256.
 
 Each signature covers both the row's contents and the previous row's signature. This creates a chain of records.
 
-> **As a result, changing a value, inserting a row or deleting a row from the middle breaks the signature chain.**
+**As a result, changing a value, inserting a row or deleting a row from the middle breaks the signature chain.**
 
 The application checks these records before continuing an existing worklog. It also provides a **Verify CSV** function that identifies the first invalid row.
 
@@ -222,7 +223,7 @@ This makes it possible to review not only the final amount, but also the records
 
 ## Security model and limitations
 
-> **Workhour Counter is designed to make accidental and deliberate changes to recorded data detectable.**
+**Workhour Counter is designed to make accidental and deliberate changes to recorded data detectable.**
 
 However, there is an important distinction between detecting manipulation and making manipulation impossible.
 
@@ -275,7 +276,7 @@ The `.workhour_running` file prevents multiple instances from running in the sam
 
 Open CSV files read-only or work with a separate copy outside the `workhour_data` folder. The application validates its data files on startup and may refuse to start if unexpected files or modifications are detected.
 
----
+
 
 ## Running from source
 
@@ -311,3 +312,9 @@ The tests cover:
 - Checkpoint validation.
 - Invoice creation, payment tracking and duplicate billing prevention.
 - PDF work statement generation.
+
+## Usage
+
+The source code is published for transparency, so users can inspect how the application works and what the executable contains. It is not intended as a starting point for modified or custom versions.
+
+The released executable is the official version of Workhour Counter. Use it to create and verify work records.
