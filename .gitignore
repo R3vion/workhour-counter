@@ -1,0 +1,17 @@
+/build.py
+/requirements-build.txt
+src/_release.py
+src/_build_secret.py
+dist/
+*.build/
+*.dist/
+*.onefile-build/
+
+# Data the app writes next to the program
+workhour_data/
+.workhour_running
+
+__pycache__/
+*.pyc
+
+*.code-workspace
